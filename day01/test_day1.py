@@ -1,5 +1,5 @@
 import pytest
-from .main import run, run_and_sum
+from .main import run
 
 test_inputs = (
     ("1abc2", 12),
