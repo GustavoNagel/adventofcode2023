@@ -31,7 +31,6 @@ def run(filename: str, ignore_spaces: bool = False):
         else:
             first_line = list(map(int, next(file)[9:].split()))
             second_line = list(map(int, next(file)[9:].split()))
-    print(first_line, second_line)
     number_ways_to_win = 1
     for _time, _distance in zip(first_line, second_line):
         race = Race(_time, _distance)
