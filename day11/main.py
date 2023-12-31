@@ -15,7 +15,7 @@ def get_compressed_columns(galaxies: list[Galaxy], line_len: int) -> list:
     contains_galaxies = set(galaxy.x for galaxy in galaxies)
     return list(compressed_columns - contains_galaxies)
 
-def update_galaxies(galaxies, compressed_columns, compressed_rows, size: int):
+def update_galaxies(galaxies: list[Galaxy], compressed_columns, compressed_rows, size: int):
     for galaxy in galaxies:
         galaxy.x += len(list(filter(lambda i: i < galaxy.x, compressed_columns))) * (size - 1)
         galaxy.y += len(list(filter(lambda j: j < galaxy.y, compressed_rows))) * (size - 1)
