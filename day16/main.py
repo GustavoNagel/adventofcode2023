@@ -132,7 +132,7 @@ class Contraption:
                 self.edges[edge] = self.energize_it(Visited(*edge))
         return max(self.edges.values())
 
-def run(filename: str, maximum: bool = True):
+def run(filename: str, maximum: bool = False):
     with open(filename, 'r') as file:
         contraption = Contraption([list(line.strip()) for line in file])
         return contraption.energize_it() if not maximum else contraption.get_max_energized_tiles()
